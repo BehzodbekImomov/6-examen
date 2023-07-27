@@ -1,0 +1,8 @@
+export const TOKEN = "token";
+export const EXPIRE_DATE = "expire";
+export const ROLE = "role";
+
+
+
+export const limit=3
+export const limit_all=10
