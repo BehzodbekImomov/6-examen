@@ -11,6 +11,11 @@ const RegistrP = () => {
     first_name: "",
     last_name: "",
     password: "",
+    info:"",
+    phoneNumber:"",
+    address:"",
+    email:"",
+
   });
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -71,6 +76,17 @@ const RegistrP = () => {
         <div className="input-group   m-auto mb-5 mt-5">
           <input
             onChange={handleChange}
+            name="email"
+            value={user.email}
+            placeholder="Email"
+            type="email"
+            className="form-control"
+          />
+        </div>
+
+        <div className="input-group   m-auto mb-5 mt-5">
+          <input
+            onChange={handleChange}
             name="password"
             value={user.password}
             placeholder="Password"
@@ -78,7 +94,39 @@ const RegistrP = () => {
             className="form-control"
           />
         </div>
-
+        
+        <div className="input-group   m-auto mb-5 mt-5">
+          <input
+            onChange={handleChange}
+            name="phoneNumber"
+            value={user.phoneNumber}
+            placeholder="Phone number"
+            type="tel"
+            className="form-control"
+          />
+        </div>
+        
+        <div className="input-group   m-auto mb-5 mt-5">
+          <input
+            onChange={handleChange}
+            name="address"
+            value={user.address}
+            placeholder="Address"
+            type="text"
+            className="form-control"
+          />
+        </div>
+        <div className="input-group   m-auto mb-5 mt-5">
+          <textarea
+            onChange={handleChange}
+            name="info"
+            value={user.info}
+            placeholder="Information"
+            type="text"
+            className="form-control"
+          />
+        </div>
+        
         <button type="submit" className="btn btn-warning form-control">
           Register
         </button>

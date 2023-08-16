@@ -21,9 +21,10 @@ const Hero = () => {
     getData();
   }, [getData]);
   return (
-    <div className="hero objectfit-cover img-fluid">
+    <div className="hero fluid">
         <div className="hero_content ">
       <Container>
+        
           <h2>
             Posted on <span>{lates.name}</span>
           </h2>

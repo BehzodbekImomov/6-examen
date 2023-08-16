@@ -20,7 +20,7 @@ const LoginP = () => {
     document.querySelector("head title").textContent = "Login";
   });
 
-  const { setIsAuthenticated ,setRole} = useContext(AuthContex);
+  const { setIsAuthenticated ,setRole,setTokens,} = useContext(AuthContex);
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
@@ -30,10 +30,11 @@ const LoginP = () => {
       setLoading(true);
       setUser({ username: "", password: "" });
       let {
-        data: { token, role, expire },
+        data: { token, role, expire, },
       } = await request.post("auth/login", user);
       setIsAuthenticated(true);
       setRole(role)
+      setTokens(token)
       if (role === "admin") {
         navigate("/dashboard");
       } else if (role === "user") {

@@ -12,7 +12,7 @@ font-family: Inter;
 font-size: 16px;
 font-style: normal;
 font-weight: 500;
-line-height: 20px; /* 125% */
+line-height: 20px; 
 letter-spacing: 3px;
 text-transform: uppercase;
 padding-bottom: 24px;
@@ -52,7 +52,6 @@ padding-bottom: 16px;
 span{
     color: var(--yellow, #FFD050);
 
-/* Body 1 */
 font-family: Inter;
 font-size: 16px;
 font-style: normal;
@@ -90,7 +89,12 @@ background: var(--yellow, #FFD050);
 
 @media (max-width:1024px){
     .hero{
+        padding: 0;
+        margin: 0;
         .hero_content{
+            background-image:none;
+            margin: 0;
+            padding: 0;
             h1{
                 font-size: 30px;
             }

@@ -15,7 +15,7 @@ const { Header, Sider, Content } = Layout;
 
 const AdminLayout = () => {
   const navigate = useNavigate();
-  const { setIsAuthenticated,setRole } = useContext(AuthContex);
+  const { setIsAuthenticated, setRole } = useContext(AuthContex);
   const [collapsed, setCollapsed] = useState(false);
   const [key, setKey] = useState(location.pathname);
   useEffect(() => {
@@ -27,7 +27,7 @@ const AdminLayout = () => {
 
   const logout = () => {
     setIsAuthenticated(false);
-    setRole(null)
+    setRole(null);
     Cookies.remove(TOKEN);
     Cookies.remove(EXPIRE_DATE);
     Cookies.remove(ROLE);
@@ -76,30 +76,34 @@ const AdminLayout = () => {
       </Sider>
       <Layout>
         <div className="container">
-
-        <Header
-          style={{
-            padding: 0,
-            background: colorBgContainer,
-            display:"flex",
-             justifyContent:"space-between",   
-            alignItems:"center",
-          }}
-        >
-          <Button
-            type="text"
-            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-            onClick={() => setCollapsed(!collapsed)}
+          <Header
             style={{
-              fontSize: "16px",
-              width: 64,
-              height: 64,
+              padding: 0,
+              background: colorBgContainer,
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
             }}
-          />
-          <Link to="/admin-account">
-           <Avatar className="mx-4 mt-4" size={36} shape="square" icon={<UserOutlined />} />
-          </Link>
-        </Header>
+          >
+            <Button
+              type="text"
+              icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+              onClick={() => setCollapsed(!collapsed)}
+              style={{
+                fontSize: "16px",
+                width: 64,
+                height: 64,
+              }}
+            />
+            <Link to="/admin-account">
+              <Avatar
+                className="mx-4 "
+                size={36}
+                shape="square"
+                icon={<UserOutlined />}
+              />
+            </Link>
+          </Header>
         </div>
 
         <Content
